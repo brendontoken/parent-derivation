@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Parent Derivation</title>
+  </head>
+  <body>
+    <h1>Parent Derivation</h1>
+    <p>You can generate samples for testing <a href="https://iancoleman.io/bip39/" target="_blank">here</a>.</p>
+    <ol>
+      <li>Click <strong>GENERATE</strong></li>
+      <li>Copy the <strong>BIP32 Extended Public Key</strong></li>
+      <li>Paste it into <strong>Parent xpub</strong></li>
+      <li>Copy one of the <strong>Private Key</strong>s</li>
+      <li>Paste it into <strong>Child Private Key</strong></li>
+      <li>For the derivation path, convert it to a path from the External part.</li>
+        <ul>
+          <li><code>m/44'/0'/0'/0/2</code> becomes <code>m/2</code></li>
+        <ul>
+      
+    </ol>
+    <p>This currently only supports generating the private key one level up.</p>
+    <p><button id="sample-data-1" onclick="pd.onFillWithSampleData()">Fill with Sample Data</button></p>
+    <form onsubmit="pd.onFormSubmit()" style="display: grid; grid-gap: 0.5em; grid-template-columns: auto 1fr;">
+      <label for="xpub" style="grid-row: 1; grid-column: 1;">Parent xpub</label>
+      <input type="text" id="xpub" style="grid-row: 1; grid-column: 2;" placeholder="xpub6F1eXnfbC4zxWNXjCv4Q9hdK4RM3uZxMKRNS4zmqsGrCWPtexwFxF3d3uBr9oZR7qSXDAWgMXeTCfn6BkWfWTXVzuHX4wzgdmNKB7RLghyK" required>
+
+      <label for="child-private-key" style="grid-row: 2; grid-column: 1;">Child Private Key</label>
+      <input type="text" id="child-private-key" style="grid-row: 2; grid-column: 2;" placeholder="KyrEdghXMEQ1xWExbExryBeB8NDMtp15eojgvPg1DqPPf3qm6hY6" required>
+
+      <label for="child-derivation-path" style="grid-row: 3; grid-column: 1;">Child Derivation Path</label>
+      <div style="grid-row: 3; grid-column: 2;">
+        <input type="text" id="child-derivation-path" placeholder="m/3" required>
+      </div>
+
+      <div style="grid-row: 4; grid-column: 2; text-align: right">
+        <button type="submit" >Calculate Parent Private Key</button>
+      </div>  
+      
+    </form>
+    <div id="results" style="display:none">
+      <h2>Results</h2>
+      <p id="private-key"></p>
+      <p id="xprv"></p>
+    </div>
+    <script src="pd.js"></script>
+  </body>
+</html>
