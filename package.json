@@ -12,8 +12,8 @@
   "license": "ISC",
   "homepage": "https://github.com/brendontoken/parent-derivation#readme",
   "devDependencies": {
-    "webpack": "^4.39.3",
-    "webpack-cli": "^3.3.7"
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   },
   "dependencies": {
     "bsv": "^0.30.0"
